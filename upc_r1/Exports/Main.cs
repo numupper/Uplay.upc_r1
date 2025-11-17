@@ -131,4 +131,15 @@ public static class Main
         Log.Verbose("[{Function}] {presenceId} {tokens}", nameof(UPLAY_PRESENCE_SetPresence), presenceId, tokens);
         return true;
     }
+
+    [UnmanagedCallersOnly(EntryPoint = "UPLAY_Release", CallConvs = [typeof(CallConvCdecl)])]
+    public static bool UPLAY_Release(IntPtr list)
+    {
+        Log.Verbose("[{Function}] {list}", nameof(UPLAY_Release), list);
+        if (list == IntPtr.Zero)
+            return true;
+
+        FreeList(list);
+        return true;
+    }
 }
