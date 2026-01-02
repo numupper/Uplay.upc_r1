@@ -81,6 +81,8 @@ internal class Save
         if (OutGamesList == IntPtr.Zero)
             return false;
         string baseSavePath = UPC_Json.Instance.Save.Path;
+        if (string.IsNullOrEmpty(baseSavePath))
+            baseSavePath = DllShared.AOTHelper.CurrentPath;
         string savePath = UPC_Json.Instance.Save.UseAppIdInName
             ? Path.Combine(baseSavePath, Main.ProductId.ToString())
             : baseSavePath;
