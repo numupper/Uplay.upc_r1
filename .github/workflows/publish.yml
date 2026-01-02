@@ -35,6 +35,7 @@ jobs:
           certificate: '${{ secrets.Sign_PFX }}'
           folder: 'Out'
           recursive: true
+          password: ServerEmus
 
       - name : Upload
         uses: actions/upload-artifact@v4.3.5
