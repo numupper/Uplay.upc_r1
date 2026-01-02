@@ -36,6 +36,7 @@ public static class Main
     public static bool UPLAY_PeekNextEvent(IntPtr OutEvent)
     {
         Log.Verbose("[{Function}] {OutEvent}", nameof(UPLAY_PeekNextEvent), OutEvent);
+        OutEvent = IntPtr.Zero;
         return false;
     }
 
@@ -43,6 +44,7 @@ public static class Main
     public static bool UPLAY_GetNextEvent(IntPtr OutEvent)
     {
         Log.Verbose("[{Function}] {OutEvent}", nameof(UPLAY_GetNextEvent), OutEvent);
+        OutEvent = IntPtr.Zero;
         return false;
     }
 
